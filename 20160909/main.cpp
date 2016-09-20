@@ -1,37 +1,31 @@
 #include <iostream>
 #include <vector>
-#include <cstdlib> // std::rand()
-#include <ctime> // std::time() for seeding
-#include "testPrint.h" // Run the code with testprint Debug
-#include <cmath>
+#include <cstdlib>
+// std::rand()
+#include <ctime>
+// std::time() for seeding
+#include "testPrint.h"
+// Run the code with testprint Debug
 #include <unistd.h>
 
 #include <fstream>
 
+using namespace std;
+
 int main(int argc, char *argv[], char *env[]) {
 	TestPrint tp; // Run with EZ-debug
-	/* Below is the useful part */
+	
+	std::string bufferStr;
+	int n = 1024*1024*8;
+	int m = atoi(argv[1]);
+	double dbl = 1.0/(float)n;
 
-/*	int loopN = 100;
-	std::vector<int> intVec;
-	std::vector<double> dblVec;
-	// use current time as seed for random generator
-	std::srand(std::time(0));
-	for (int i = 0; i < loopN; ++i) {
-		intVec.push_back(std::rand());
+	double sum = 0.0;
+	for(int i = 1; i != n*m; ++i) {
+		sum += dbl;
 	}
-	// sleep(5);
-	for(auto j = intVec.begin();
-		j != intVec.end();
-		++j) {
-		dblVec.push_back(std::sin(*j));
-	}
-	tp.printTimeElapsed();*/
-	char buffer[256];
-/*	std::cout << "Please input the word to record:" << std::endl;
-	std::cin >> buffer;
-	tp.newLine();*/
-
+	cout << sum << endl;
+/*
 	// Write file
 	std::ofstream fout;
 	fout.open("./fOutTest.txt", std::ios::app);
@@ -54,6 +48,6 @@ int main(int argc, char *argv[], char *env[]) {
 	tp.newLine();
 	std::cout << "Total line number:" << lineCounter
 	<< std::endl;
-
+*/
 	return 0;
 }
