@@ -28,7 +28,13 @@ int main(int argc, char *argv[], char *env[]) {
 	}
 
 	cout << count << " element(s) are input in total."
-		<< endl;
+		<< endl << endl;
+
+	for(auto &elem : intVec) {
+		cout << elem << '\t' << endl;
+	}
+
+
 
 	tp.promptBlock("Finished!");
 	return 0;

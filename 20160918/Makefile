@@ -9,6 +9,9 @@ main.o :
 testPrint.o : 
 	cd $(SRC_DIR1) && $(MAKE)
 
+formatOutput.o :
+	cd $(SRC_DIR2) && $(MAKE)
+
 .PHONY : clean
 clean :
-	rm -r $(MAIN_TARGET) $(OBJS)
+	rm -rf $(MAIN_TARGET) $(OBJS)
