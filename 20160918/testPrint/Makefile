@@ -3,7 +3,7 @@
 include ../makefile.config
 
 testPrint.o : testPrint.h
-	$(CXX) $(STD) -c testPrint.cpp -o ../testPrint.o
+	$(CXX) $(STD) -Wall -c testPrint.cpp -o ../testPrint.o
 
 .PHONY : clean
 clean :

@@ -47,7 +47,7 @@ private:
 	std::vector<std::string> namesVec;
 	std::string dataStr;
 	// private methods:
-	void data2str();
+	void data2str(); // mode=0, 
 	void data2str(int mode);
 	std::string num2str(double num);
 	void clearDataStr();

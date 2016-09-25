@@ -7,15 +7,16 @@ main.o :
 	$(CXX) $(CFLAG) $(STD) -c main.cpp  -o main.o
 
 testPrint.o : 
-	cd $(SRC_DIR1) && $(MAKE)
+	cd $(SRC_DIR1) && make
 
 formatOutput.o :
-	cd $(SRC_DIR2) && $(MAKE)
+	cd $(SRC_DIR2) && make
+
 
 .PHONY : clean remake
-
+# phony commands
 clean :
 	rm -rf $(MAIN_TARGET) $(OBJS)
 
 remake :
-	make clean && make && clear
+	clear && make clean && make

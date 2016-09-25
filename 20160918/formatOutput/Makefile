@@ -3,7 +3,7 @@
 include ../makefile.config
 
 formatOutput.o : formatOutput.h
-	$(CXX) $(STD) -c formatOutput.cpp -o ../formatOutput.o
+	$(CXX) $(STD) -Wall -c formatOutput.cpp -o ../formatOutput.o
 
 .PHONY : clean
 clean :
