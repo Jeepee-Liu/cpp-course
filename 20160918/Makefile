@@ -12,6 +12,10 @@ testPrint.o :
 formatOutput.o :
 	cd $(SRC_DIR2) && $(MAKE)
 
-.PHONY : clean
+.PHONY : clean remake
+
 clean :
 	rm -rf $(MAIN_TARGET) $(OBJS)
+
+remake :
+	make clean && make && clear
