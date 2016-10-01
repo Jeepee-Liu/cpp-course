@@ -6,6 +6,23 @@
 #include <string>
 #include <cstdio>
 
+/* Rule of data arrangement:
+ * data[i] is the pointer to i-th column
+ * data[i][j] is the j-row element in the i-th column
+ * data column not exceed 20
+ * 
+ * A data sheet should like this: ( '\t' = ' '*8 )
+
+	====================================
+	Col 1		Col 2		Col 3
+	------------------------------------
+	1.000000	4.000000	7.000000
+	2.000000	5.000000	8.000000
+	3.000000	6.000000	9.000000
+	====================================
+
+ */
+
 class FormatOutput{
 // Output data in a 2D format
 // with type "double"
@@ -20,23 +37,8 @@ public:
 	void printData();
 
 private:
-	double* data[20]; // for 2D data
-	/* Rule of data arrangement:
-	 * data[i] is the pointer to i-th column
-	 * data[i][j] is the j-row element in the i-th column
-	 * data column not exceed 20
-	 * 
-	 * A data sheet should like this: ( '\t' = ' '*8 )
-
-		====================================
-		Col 1		Col 2		Col 3
-		------------------------------------
-		1.000000	4.000000	7.000000
-		2.000000	5.000000	8.000000
-		3.000000	6.000000	9.000000
-		====================================
-
-	 */
+	const static int maxColN=20;
+	double* data[maxColN]; // for 2D data
 	std::string fileDir;
 	// A flag of file directory setter. 
 	bool isFileDirSet;
@@ -47,8 +49,8 @@ private:
 	std::vector<std::string> namesVec;
 	std::string dataStr;
 	// private methods:
-	void data2str(); // mode=0, 
-	void data2str(int mode);
+	void data2str(); // mode=0, decorated 
+	void data2str(int mode); // mode=0: decorated; mode=1: concise
 	std::string num2str(double num);
 	void clearDataStr();
 };

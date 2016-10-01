@@ -1,0 +1,40 @@
+## INTRODUCTION
+
+This program is to simulate 2-dimensional random walk.
+A point determined by its (x, y) coordinate is moving on
+a xy-plane step by step complied with the recursive rule
+below:
+	
+	x(i+1) = x(i) + dx(l,p);
+	y(i+1) = y(i) + dy(l,p);
+
+Where x(i) and y(i) denote the x and y coordinate of the
+point after i steps; dx(l,p) and dy(l,p) denote two
+independent random variable uniformly distributed in
+[-l,l], with probability p to move a full step and (1-p)
+to move half a step.
+
+## PARAMETERS
+
+To see more about parameter settings, run the program
+with "-h".
+
+## OUTCOME
+
+By default, the outcome would be written in the file
+"./tmplog.txt" as text file.
+
+## COMPILATION
+
+"g++ compiler is required to compile the file. To
+recompile, use command "make" in the root directory.
+The executable file is named as "example" by default. 
+
+It is strongly recommended to recompile the program
+before you run it. 
+
+## DATA VISUALIZATION
+
+A python2 script "parseData.py" is provided in the root
+directory to visualize the data.
+Just run "python parseData.py" if you did not changed the output file name.

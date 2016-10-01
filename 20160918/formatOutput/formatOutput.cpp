@@ -1,5 +1,7 @@
 #ifdef _FORMAT_OUTPUT_H
 
+/********** public methods **********/
+
 FormatOutput::FormatOutput() {
 	this->isFileDirSet = false;
 	this->dataSizeN[0] = 0;
@@ -79,7 +81,7 @@ bool FormatOutput::appendData(std::string name, double* dataColumn, int len) {
 		// Not the first column AND array size not matched
 		return false;
 	}
-} // Done
+} // Done & tested
 
 int* FormatOutput::getDataSize(){
 	// prevent direct call at private pointer
@@ -98,20 +100,27 @@ bool FormatOutput::writeData() {
 	fOut << this->dataStr;
 	fOut.close();
 	return true;
-} // Done
+} // Done & tested
 
 void FormatOutput::clearData(){
-	for(int i=1; i!=this->dataSizeN[1]; ++i) {
-		delete[] data[i];
+	for(int i=0; i!=this->dataSizeN[1]; ++i) {
+		/***** For test:
+		 * std::cout<< "Loop #: " << i << std::endl;
+		 */
+		delete[] this->data[i];
 	}
-} // Done
+	this->namesVec.clear();
+	this->dataSizeN[0] = 0;
+	this->dataSizeN[1] = 0;
+} // Done & debugged & tested
 
 void FormatOutput::printData() {
+	// int* dataSize = this->getDataSize();
 	int maxCol = this->dataSizeN[1];
 	int maxRow = this->dataSizeN[0];
 	// print header
-	std::cout << "data table of " << maxRow
-	<< '*' << maxCol << std::endl << std::endl;
+	std::cout << "\ndata table of " << maxRow
+	<< '*' << maxCol << std::endl;
 	// refesh the string buffering the output
 	this->data2str(0); // mode: decorated
 	/* **** For test:
@@ -122,15 +131,18 @@ void FormatOutput::printData() {
 } // Done & tested
 
 std::string FormatOutput::num2str(double num) {
-	char* tmpCharPtr = new char[20];
+	char* tmpCharPtr = new char[100];
 	std::sprintf(tmpCharPtr,"%.6f",num);
 	std::string str(tmpCharPtr);
 	delete[] tmpCharPtr;
 	return str;
 } // Done & tested
 
+/********** private methods **********/
+
 void FormatOutput::data2str(){
 	this->clearDataStr();
+	// int* dataSize = this->getDataSize();
 	int maxCol = this->dataSizeN[1];
 	int maxRow = this->dataSizeN[0];
 	std::string &bufferStr = this->dataStr;
@@ -146,15 +158,15 @@ void FormatOutput::data2str(){
 	for(int row=0; row<maxRow; ++row) {
 		// append each row of data
 		for(int col=0; col<maxCol; ++col) {
-			// append each column of data in the row
 			/***** For test: *****
 			 *  std::cout << "[converting to string...] Row: " << row << ", column: " << col << ". Value: " << num2str(data[row][col]) << std::endl;
 			 */
+			// append each column of data in the row
 			// ATTENTION!!!
 			// Data element for correspondent position (row, col) is data[col][row]
 			bufferStr += num2str(data[col][row]) + "\t";
 		}
-		bufferStr += '\n';
+		bufferStr += '\n'; // end of each line
 	}
 	bufferStr += boldLine + '\n';
 } // Done & debugged & tested
@@ -190,11 +202,11 @@ void FormatOutput::data2str(int mode) {
 	else if( mode == 0 ) {
 		this->data2str();
 	}
-}
+} // Done & tested
 
 void FormatOutput::clearDataStr(){
 	// clear the data buffered in "dataStr"
 	this->dataStr = "";
-} // Done
+} // Done & tested
 
 #endif
