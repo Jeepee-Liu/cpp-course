@@ -37,7 +37,7 @@ void RandomWalk::run(char mode) {
 		avgData = calculateData(xs, ys, ds);
 		this->writeData(i, avgData);
 		if( i%10 == 0 ) {
-			std::cout << "Now executing loop: "  << std::setw(8)
+			std::cout << "Executing loop: "  << std::setw(8)
 				<< i << '/' << this->stepN << " [ "
 				<< std::setprecision(6) << ((double)i)/((double)this->stepN) *100 << "% ] " << std::endl;
 		}
@@ -58,6 +58,8 @@ void RandomWalk::move(char mode){
 	double deg = 0;
 	double &x = this->xPos;
 	double &y = this->yPos;
+	double dx = 0;
+	double dy = 0;
 	double componentLength = this->stepLength;
 	switch (mode) {
 		case 'p': // probably walk half length
@@ -67,23 +69,24 @@ void RandomWalk::move(char mode){
 				componentLength *= 0.5;
 			}
 			deg = 2*this->pi* std::rand()/(double)RAND_MAX;
-			x += componentLength * std::cos(deg);
-			y += componentLength * std::sin(deg);
+			dx = componentLength * std::cos(deg);
+			dy = componentLength * std::sin(deg);
 			break;
 		case 'u':
 			deg = 2*pi* std::rand()/(double)RAND_MAX;
-			x += componentLength * std::cos(deg);
-			y += componentLength * std::sin(deg);
+			dx = componentLength * std::cos(deg);
+			dy = componentLength * std::sin(deg);
 			break;
 		default :
-			componentLength = this->stepLength / this->sqrt2;
-			if( indicator > this->pWalk ) {
-				componentLength *= 0.5;
-			}
+			std::cout << "No distinguishable mode input!\nUse default mode: u" << std::endl;
+			deg = 2*pi* std::rand()/(double)RAND_MAX;
+			dx = componentLength * std::cos(deg);
+			dy = componentLength * std::sin(deg);
 			break;
 	}
-	x += componentLength * (( 2*(double) std::rand() ) / RAND_MAX - 1);
-	y += componentLength * (( 2*(double) std::rand() ) / RAND_MAX - 1);
+	x += dx;
+	y += dy;
+	std::cout << std::setprecision(8) << dx << "\t" << dy << "\t" << x << "\t" << y << std::endl;	
 } // Done
 
 void RandomWalk::appendMove(int j, double* xs, double* ys, double* ds) {

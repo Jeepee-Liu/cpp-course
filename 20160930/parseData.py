@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import numpy as np
 import matplotlib.pyplot as plt 
 import sys, time
@@ -21,9 +23,15 @@ class ParseData():
 		if len(varNames) == 0:
 			varNames = self.dataDict.keys()
 		plt.figure()
+		index = 1
+		for varName in varNames:
+			plt.subplot(len(varNames),2,index)
+			plt.plot(self.dataDict[varName],label=varName)
+			index += 2
+		plt.subplot(1,2,2)
 		for varName in varNames:
 			plt.plot(self.dataDict[varName],label=varName)
-		plt.legend()
+			plt.
 		plt.show()
 
 	def xyplot(self, xVarName, yVarName):

@@ -33,9 +33,10 @@ void usage(char* argv0) {
 } // Done
 
 void parseArgs(int argc, char* argv[], int* stepN,
-	double* stepLength, string* fileName, int* avgN, double* pWalk) {
+	double* stepLength, string* fileName, int* avgN,
+	double* pWalk, char* mode) {
 	char ch;
-	while(( ch = getopt(argc,argv,"n:l:o:a:h") ) != -1 ){
+	while(( ch = getopt(argc,argv,"n:l:o:a:p:m:h") ) != -1 ){
 		switch (ch) {
 		case 'n':
 			*stepN = atoi(optarg);
@@ -51,6 +52,8 @@ void parseArgs(int argc, char* argv[], int* stepN,
 			break;
 		case 'p':
 			*pWalk = atof(optarg);
+		case 'm':
+			*mode = optarg[0];
 		case 'h':
 			usage(argv[0]);
 		case '?':

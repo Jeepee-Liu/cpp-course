@@ -2,7 +2,7 @@
 include ../makefile.config
 
 randomWalk.o : randomWalk.h
-	$(CXX) $(STD) -Wall -c randomWalk.cpp -o ../randomWalk.o
+	$(CXX) $(STD) $(CFLAG) -c randomWalk.cpp -o ../randomWalk.o
 
 .PHONY : clean
 clean :

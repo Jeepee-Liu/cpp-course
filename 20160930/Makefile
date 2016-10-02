@@ -4,7 +4,7 @@ $(MAIN_TARGET) : $(OBJS)
 	$(CXX) $(OBJS) -o $(MAIN_TARGET)
 
 main.o : main.h
-	$(CXX) $(STD) $(CFLAG) -c main.cpp  -o main.o
+	$(CXX) $(STD) $(CFLAG) $(INC) -c main.cpp  -o main.o
 
 randomWalk.o :
 	cd $(SRC_DIR) && make
