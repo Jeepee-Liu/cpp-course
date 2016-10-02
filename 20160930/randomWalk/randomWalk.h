@@ -19,7 +19,8 @@ private:
 	double stepLength;
 	double xPos, yPos;
 	std::ofstream fo;
-	static const double sqrt2;
+	const double sqrt2 = 1.4142135623730951;
+	const double pi = 3.14159265358979323846;
 	double pWalk;
 	void move(char mode);
 	double getDistance();
@@ -29,5 +30,6 @@ private:
 	double stdDiv(double* vs);
 	void writeData(int index, double *avgData);
 };
-# include "randomWalk.cpp"
+
+# include <randomWalk.cpp>
 #endif

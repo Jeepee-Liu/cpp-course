@@ -1,6 +1,9 @@
 #ifdef RANDOM_WALK_H
 
+/*
 const double RandomWalk::sqrt2 = 1.4142135623730951;
+const double RandomWalk::pi = 3.14159265358979323846;
+*/
 
 RandomWalk::RandomWalk(int stepN, double stepLength, std::string fileName, int avgN, double pWalk){
 	std::srand(std::time(0));
@@ -21,7 +24,6 @@ RandomWalk::RandomWalk(int stepN, double stepLength, std::string fileName, int a
 } // 
 
 void RandomWalk::run(char mode) {
-	int avgN = this->avgN
 	double* xs = new double[this->avgN];
 	double* ys = new double[this->avgN];
 	double* ds = new double[this->avgN];
@@ -52,19 +54,26 @@ void RandomWalk::end() {
 
 /* private */
 void RandomWalk::move(char mode){
-	double indicator = (double) std::rand() / RAND_MAX;
+	double indicator = 0;
+	double deg = 0;
 	double &x = this->xPos;
 	double &y = this->yPos;
-	double componentLength = 1.0;
+	double componentLength = this->stepLength;
 	switch (mode) {
-		case 'p':
-			componentLength = this->stepLength / this->sqrt2;
+		case 'p': // probably walk half length
+			indicator = ((double) std::rand())/(double)RAND_MAX;
+			componentLength = this->stepLength;
 			if( indicator > this->pWalk ) {
 				componentLength *= 0.5;
 			}
+			deg = 2*this->pi* std::rand()/(double)RAND_MAX;
+			x += componentLength * std::cos(deg);
+			y += componentLength * std::sin(deg);
 			break;
-		case 'e':
-			componentLength = 1.0;
+		case 'u':
+			deg = 2*pi* std::rand()/(double)RAND_MAX;
+			x += componentLength * std::cos(deg);
+			y += componentLength * std::sin(deg);
 			break;
 		default :
 			componentLength = this->stepLength / this->sqrt2;
