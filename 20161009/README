@@ -1,0 +1,39 @@
+/*********************************************
+ * 
+ * Title    : 1-D Monte-Carlo walk 
+ *
+ * Author   : Richard Liu
+ *            刘知平 (13307110296)
+ * 
+ * Date     : October 9, 2016
+ * 
+ * Language : C/C++, python2
+ * 
+ *********************************************/
+
+This project is to simulate a 1D Monte-Carlo walk.
+
+/* main program */
+
+	Run 'make' to compile the C++ program into an
+	executable file (named as 'example' by default).
+
+	The output file is write into './tmp.log'.
+
+/* data parsing and visualizing */
+
+	Run './parseData.py' to parse the output data from
+	the simulation C++ program.
+
+	Both image output and statistical output are
+	avaliable.
+
+/* Scripted Multi-point simulation and  */
+	
+	Run exec.py by executing './exec.py' to simulate
+	different parameters. Setting of exec.py is in the
+	function 'setup()'.
+
+	Output is in graphic form and a '*.png' file would be saved in the root directory.
+
+

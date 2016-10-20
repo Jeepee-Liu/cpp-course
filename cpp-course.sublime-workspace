@@ -1,0 +1,890 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ini",
+				"initMode"
+			],
+			[
+				"getD",
+				"getDistance\t(MCWalk.h)"
+			],
+			[
+				"get",
+				"getDistance"
+			],
+			[
+				"time",
+				"timeElapsed"
+			],
+			[
+				"pl",
+				"plot"
+			],
+			[
+				"var",
+				"varName"
+			],
+			[
+				"varNa",
+				"varName\t(parseData.py)"
+			],
+			[
+				"read",
+				"readlines\t(parseData.py)"
+			],
+			[
+				"file",
+				"fileDir"
+			],
+			[
+				"for",
+				"format\t(exec.py)"
+			],
+			[
+				"set",
+				"setting"
+			],
+			[
+				"sys",
+				"system"
+			],
+			[
+				"bas",
+				"baseStateProb"
+			],
+			[
+				"each",
+				"eachVal"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"parse",
+				"parseArg"
+			],
+			[
+				"pr",
+				"prompt"
+			],
+			[
+				"data",
+				"dataList"
+			],
+			[
+				"form",
+				"formatString"
+			],
+			[
+				"inc",
+				"include"
+			],
+			[
+				"ne",
+				"nextPosition"
+			],
+			[
+				"sep",
+				"stepLength\t(main.h)"
+			],
+			[
+				"in",
+				"int"
+			],
+			[
+				"ste",
+				"stepN\t(main.h)"
+			],
+			[
+				"av",
+				"avgN\t(main.h)"
+			],
+			[
+				"po",
+				"potential"
+			],
+			[
+				"pot",
+				"potential1"
+			],
+			[
+				"Se",
+				"SettingT"
+			],
+			[
+				"mian",
+				"main.h\t(main.cpp)"
+			],
+			[
+				"se",
+				"setting\t(main.cpp)"
+			],
+			[
+				"com",
+				"componentLength"
+			],
+			[
+				"p",
+				"pWalk"
+			],
+			[
+				"f",
+				"fstream\t(randomWalk.h)"
+			],
+			[
+				"random",
+				"randomWalk\t(makefile.config)"
+			],
+			[
+				"step",
+				"stepLength"
+			],
+			[
+				"ran",
+				"randomWalk"
+			],
+			[
+				"rand",
+				"randWalk\t(main.cpp)"
+			],
+			[
+				"fil",
+				"fileName"
+			],
+			[
+				"double",
+				"doubleVec"
+			],
+			[
+				"init",
+				"__init__\tmagic"
+			],
+			[
+				"dataS",
+				"dataSize"
+			],
+			[
+				"max",
+				"maxCol"
+			],
+			[
+				"datas",
+				"dataSizeN"
+			],
+			[
+				"names",
+				"namesVec"
+			],
+			[
+				"forma",
+				"formatOutput.h\t(Makefile)"
+			],
+			[
+				"dataSize",
+				"dataSizePtr"
+			],
+			[
+				"Forma",
+				"FormatOutput"
+			],
+			[
+				"main",
+				"main.o"
+			],
+			[
+				"format",
+				"formatOutput"
+			],
+			[
+				"dataCol",
+				"dataColPtr"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"dat",
+				"dataSizeN"
+			],
+			[
+				"S",
+				"SRC_DIR2\t(makefile.config)"
+			],
+			[
+				"dataC",
+				"dataColumn"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"da",
+				"dataSizeN"
+			],
+			[
+				"bu",
+				"buffer"
+			],
+			[
+				"Data",
+				"DataType"
+			],
+			[
+				"int",
+				"intVec"
+			],
+			[
+				"prom",
+				"promptBlock\t(testPrint.h)"
+			],
+			[
+				"n",
+				"number"
+			],
+			[
+				"buf",
+				"bufferStr"
+			],
+			[
+				"pu",
+				"push_back"
+			],
+			[
+				"input",
+				"inputStrings"
+			],
+			[
+				"line",
+				"lineCounter"
+			],
+			[
+				"fou",
+				"fout"
+			],
+			[
+				"clo",
+				"clock_t\t(testPrint.cpp)"
+			],
+			[
+				"ti",
+				"timeElapsed"
+			],
+			[
+				"make",
+				"makefile.config\t(Makefile)"
+			],
+			[
+				"an",
+				"anyLine"
+			],
+			[
+				"tes",
+				"testPrint"
+			],
+			[
+				"test",
+				"testPrint"
+			],
+			[
+				"te",
+				"testPrint.cpp\t(testPrint.h)"
+			],
+			[
+				"testP",
+				"testPrint.h"
+			],
+			[
+				"tets",
+				"testPrint.o"
+			],
+			[
+				"sm",
+				"smtpserver"
+			],
+			[
+				"send",
+				"sendAnEmail"
+			],
+			[
+				"re",
+				"receiverAdd\t(sendEmail.py)"
+			],
+			[
+				"o",
+				"objects"
+			],
+			[
+				"bar",
+				"barLine\t(testPrint.h)"
+			],
+			[
+				"sta",
+				"starLine"
+			],
+			[
+				"list",
+				"listDir"
+			],
+			[
+				"samp",
+				"sampleGap"
+			],
+			[
+				"sample",
+				"sampleN"
+			],
+			[
+				"__",
+				"__doc__\tmagic"
+			],
+			[
+				"bin",
+				"bins"
+			],
+			[
+				"self",
+				"self"
+			],
+			[
+				"print",
+				"printInfo"
+			],
+			[
+				"prin",
+				"printInfo"
+			],
+			[
+				"Tem",
+				"TemperatureData"
+			],
+			[
+				"impo",
+				"import"
+			],
+			[
+				"wri",
+				"writeLog"
+			],
+			[
+				"update",
+				"updateStamps"
+			],
+			[
+				"try",
+				"try\tTry/Except"
+			],
+			[
+				"log",
+				"logFileDir"
+			],
+			[
+				"ex",
+				"except\tkeyword"
+			],
+			[
+				"temp",
+				"temp"
+			],
+			[
+				"v",
+				"vector\tstd::vector"
+			],
+			[
+				"que",
+				"queueV"
+			],
+			[
+				"Qu",
+				"queueV"
+			],
+			[
+				"e",
+				"enqueue\t(v-test.h)"
+			],
+			[
+				"ret",
+				"retVal"
+			],
+			[
+				"vector",
+				"vector"
+			],
+			[
+				"be",
+				"begin"
+			],
+			[
+				"end",
+				"endl"
+			],
+			[
+				"qu",
+				"quoteV"
+			],
+			[
+				"q",
+				"quoteV"
+			],
+			[
+				"st",
+				"string-test"
+			],
+			[
+				"modu",
+				"modulus"
+			],
+			[
+				"math",
+				"math"
+			],
+			[
+				"i",
+				"if\tIf Condition"
+			],
+			[
+				"import",
+				"__import__\t__import__"
+			],
+			[
+				"root",
+				"rootdir"
+			],
+			[
+				"def",
+				"defs\tMethod"
+			],
+			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"min",
+				"min\tmin"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/jeepee/Documents/Cpp_trade/20161002/main.cpp",
+			"settings":
+			{
+				"buffer_size": 311,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Haskell/Haskell.sublime-build",
+					""
+				],
+				[
+					"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/SublimeREPL/sublimerepl_build_system_hack.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "pa",
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"Py",
+				"SublimeREPL: Python"
+			],
+			[
+				"Packa",
+				"Package Control: Install Package"
+			],
+			[
+				"Pa",
+				"Package Control: Install Package"
+			],
+			[
+				"The",
+				"SublimeLinter: Choose Gutter Theme"
+			],
+			[
+				"REpl",
+				"SublimeREPL: Python"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"repl py",
+				"SublimeREPL: Python"
+			],
+			[
+				"package lis",
+				"Package Control: List Packages"
+			],
+			[
+				"package control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 418.0
+	},
+	"console":
+	{
+		"height": 181.0,
+		"history":
+		[
+			"import numpy as np",
+			"a",
+			"aa",
+			"a",
+			"run",
+			"a",
+			"aa "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161009"
+	],
+	"file_history":
+	[
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/InsertDate/insert_date.sublime-settings",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/User/insert_date.sublime-settings",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/User/Cpp.sublime-build",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/User/cpp_files.sublime-build",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161009/main.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161009/main.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161009/parseData.py",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161009/MCWalk/MCWalk.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161009/MCWalk/MCWalk.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161009/exec.py",
+		"/Users/jeepee/Documents/Cpp_trade/20161002/main.cpp",
+		"/Users/jeepee/Documents/Haskell/20161009/main.hs",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/main.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/main.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/exec.py",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/MCWalk/MCWalk.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/MCWalk/MCWalk.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/parseData.py",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/README",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/stat.txt",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/log.txt",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/tmp.log",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/parseData.py",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/randomWalk/randomWalk.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/makefile.config",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/MCWalk/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/main.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20161014/monteCarloWalk/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/randomWalk/randomWalk.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/main.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/makefile.config",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/randomWalk/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/README",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/tmplog.txt",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/formatOutput/formatOutput.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/formatOutput/formatOutput.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/formatOutput/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/randomWalk.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160930/coordinate.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/SQLtest/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/SQLtest/makefile.config",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/SQLtest/main.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/main.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/makefile.config",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/formatOutput/formatOutput.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/parseData.py",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/formatOutput/formatOutput.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/testPrint/testPrint.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/formatOutput/parseData.py",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/test.txt",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/formatOutput/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/testPrint/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160923/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160923/main.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/formatOutput/M'a'ke'f'i'le",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160918/testPrint/testPrint.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/course-info",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/makefile.config",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/main.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/testPrint/testPrint.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/testPrint/testPrint.h",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/User/Base File.sublime-settings",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/jeepee/Documents/py_trade/test0913-json/JSON-example.py",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/testPrint/Makefile",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/test",
+		"/Users/jeepee/Documents/py_trade/test0911-Email/stepsToDo/snapPhoto.py",
+		"/Users/jeepee/Documents/py_trade/test0911-Email/stepsToDo/sendEmail.py",
+		"/Users/jeepee/Documents/py_trade/test0911-Email/main.py",
+		"/Users/jeepee/Documents/py_trade/test0911-Email/stepsToDo/__init__.py",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/testPrint",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/testPrint.h",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/testPrint.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/cpp-course/20160909/formatPrintsTest.cpp",
+		"/Users/jeepee/Documents/py_trade/test0804/os-test.py",
+		"/Users/jeepee/Documents/py_trade/test0828-PID/PID-simu.py",
+		"/Users/jeepee/Documents/py_trade/test0906-picamera/picamera-renderer.py",
+		"/Users/jeepee/Documents/py_trade/test0906-picamera/pi-cam-test.py",
+		"/Users/jeepee/Documents/py_trade/test0906-picamera/pi'cam'er'a",
+		"/Users/jeepee/Documents/py_trade/download_test.py",
+		"/Users/jeepee/Documents/Cpp_trade/20160804/cpu_heater.cpp",
+		"/Users/jeepee/Documents/py_trade/test0804/logAnalysis.py",
+		"/Users/jeepee/Documents/py_trade/test0709/getCPUTemp3.py",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/SublimeREPL/SublimeREPL.sublime-settings",
+		"/Users/jeepee/Documents/py_trade/test0709/getCPUTemp2.py",
+		"/Users/jeepee/Documents/py_trade/test0709/getLatestFile.py",
+		"/Users/jeepee/Documents/Cpp_trade/20160804/cpuHeater",
+		"/Users/jeepee/Documents/HTML-learning/page2.htm",
+		"/Users/jeepee/Documents/HTML-learning/mainpage.htm",
+		"/Users/jeepee/Documents/HTML-learning/page1.htm",
+		"/Users/jeepee/Documents/py_trade/test0709/argvparser.py",
+		"/Users/jeepee/Documents/py_trade/test0709/argvparse.py",
+		"/Users/jeepee/Documents/Cpp_trade/20160722/main.h",
+		"/Users/jeepee/Documents/Cpp_trade/20160722/v-test.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/20160722/v-test.h",
+		"/Users/jeepee/Documents/Cpp_trade/20160722/makefile",
+		"/Users/jeepee/Documents/Cpp_trade/20160722/main.cpp",
+		"/Users/jeepee/Documents/Cpp_trade/20160714/makefile",
+		"/Users/jeepee/Documents/Cpp_trade/20160714/string-test.h",
+		"/Users/jeepee/Documents/Cpp_trade/20160714/string-test.cpp",
+		"/Users/jeepee/Documents/py_trade/test0709/string-test.cpp",
+		"/Users/jeepee/Documents/py_trade/test0714/build-gif.py",
+		"/Users/jeepee/Documents/Cpp_trade/20160709/cpptest.cpp",
+		"/Users/jeepee/Documents/py_trade/test0709/import-test.py",
+		"/Users/jeepee/Documents/TeX/sublime_test.tex",
+		"/Users/jeepee/Documents/py_trade/test0624/Stack.py",
+		"/Users/jeepee/Documents/py_trade/test0624/terminal_test.py",
+		"/Users/jeepee/Documents/py_trade/test0624/DirTree.py",
+		"/Users/jeepee/Documents/py_trade/test0623/plt-test.py",
+		"/Users/jeepee/Documents/py_trade/test0623/test.cs",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/Users/jeepee/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/jeepee/Documents/Cpp_trade/test1.cpp"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"positions",
+			"name",
+			"monteCarloWalk",
+			"randomWalk",
+			"cpnLen",
+			"\"\\t\\t\"",
+			"1.4142135623730951",
+			"'",
+			"formatOutput",
+			"getArgs",
+			"SYMBOL",
+			"intVec",
+			"objects",
+			"name",
+			"title"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"OBJS"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/jeepee/Documents/Cpp_trade/20161002/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 311,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								311,
+								311
+							]
+						],
+						"settings":
+						{
+							"colorcode": true,
+							"syntax": "Packages/Colorcoder/C++ (Colorcoded).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 114.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 99.0
+	},
+	"pinned_build_system": "Packages/User/Cpp.sublime-build",
+	"project": "cpp-course.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 184.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
