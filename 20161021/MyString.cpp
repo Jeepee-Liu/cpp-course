@@ -1,70 +1,75 @@
 #ifdef MY_STRING_H
 
+/////////////////////////////////////////////////////
+/////////////////// class methods ///////////////////
+/////////////////////////////////////////////////////
+
+
 /***************** public methods *****************/
 
 //////////////////// constructors ////////////////////
 
 MyString::MyString() {
-	curP = new char[1];
-	if( curP == nullptr ) {
+	headP = new char[1];
+	if( headP == nullptr ) {
 		allocError();
 	}
 	else {
-		curP[0] = eos;
+		headP[0] = eos;
 	}
 } // Done
 
 MyString::MyString( const char ch ) {
-	curP = new char[2];
-	if( curP == nullptr ) {
+	headP = new char[2];
+	if( headP == nullptr ) {
 		allocError();
 	}
 	else {
-		curP[0] = ch;
-		curP[1] = eos;
+		headP[0] = ch;
+		headP[1] = eos;
 	}
 } // Done
 
 MyString::MyString( MyStrSizeT len, const char ch ) {
-	curP = new char[ len + 1 ];
-	if( curP == nullptr ) {
+	headP = new char[ len + 1 ];
+	if( headP == nullptr ) {
 		allocError();
 	}
 	else {
 		for( MyStrSizeT i=0; i<len; ++i ) {
-			curP[i] = ch;
+			headP[i] = ch;
 		}
-		curP[len] = eos;
+		headP[len] = eos;
 	}
 } // Done
 
 MyString::MyString( const char* chars ){
 	// get the length of target string;
 	MyStrSizeT len = getStrLength(chars);
-	curP = new char[ len + 1 ];
-	if( curP == nullptr ) {
+	headP = new char[ len + 1 ];
+	if( headP == nullptr ) {
 		allocError();
 	}
 	else {
 		for( MyStrSizeT i=0; i<len; ++i ) {
-			curP[i] = chars[i];
+			headP[i] = chars[i];
 		}
-		curP[len] = eos;
+		headP[len] = eos;
 	}
 } // Done
 
 MyString::MyString( const MyString& myStr ) {
 	MyStrSizeT len = myStr.size();
 	char* tempCharP = myStr.getString();
-	curP = new char[ len + 1 ];
-	if( curP == nullptr ) {
+	headP = new char[ len + 1 ];
+	if( headP == nullptr ) {
 		allocError();
 	}
 	else {
 		for( MyStrSizeT i=0; i<len; ++i ) {
-			curP[i] = tempCharP[i];
+			headP[i] = tempCharP[i];
 		}
-		curP[len] = eos;
+		headP[len] = eos;
 	}
 	delete[] tempCharP;
 } // Done
@@ -72,13 +77,13 @@ MyString::MyString( const MyString& myStr ) {
 //////////////////// destructor ////////////////////
 
 MyString::~MyString() {
-	delete[] curP;
+	delete[] headP;
 } // Done
 
 //////////////////// size getter ////////////////////
 
 inline MyString::MyStrSizeT MyString::size() const {
-	MyStrSizeT len = getStrLength(curP);
+	MyStrSizeT len = getStrLength(headP);
 	return len;
 } // Done
 
@@ -91,12 +96,12 @@ inline bool MyString::empty() const {
 //////////////////// print ////////////////////
 
 inline std::ostream& MyString::print(std::ostream& os) {
-	os << curP;
+	os << headP;
 	return os;
 }
 
 inline const std::ostream& MyString::print(std::ostream& os) const {
-	os << curP;
+	os << headP;
 	return os;
 }
 
@@ -118,61 +123,61 @@ inline const MyString& MyString::show() const {
 
 char* MyString::getString() const {
 	MyStrSizeT len = size();
-	char* newCurP = new char[ len + 1 ];
-	if( newCurP == nullptr ) {
+	char* newheadP = new char[ len + 1 ];
+	if( newheadP == nullptr ) {
 		allocError();
 	}
 	else {
 		for( MyStrSizeT i=0; i<len; ++i ) {
-			newCurP[i] = curP[i];
+			newheadP[i] = headP[i];
 		}
-		newCurP[len] = eos;
+		newheadP[len] = eos;
 	}
-	return newCurP;
+	return newheadP;
 } // Done
 
 //////////////////// operator = ////////////////////
 
 void MyString::operator=( const char ch ) {
-	delete[] curP;
-	curP = new char[2];
-	if( curP == nullptr ) {
+	delete[] headP;
+	headP = new char[2];
+	if( headP == nullptr ) {
 		allocError();
 	}
 	else {
-		curP[0] = ch;
-		curP[1] = eos;
+		headP[0] = ch;
+		headP[1] = eos;
 	}
 } // Done
 
 void MyString::operator=( const char* chars ) {
-	delete[] curP;
+	delete[] headP;
 	MyStrSizeT len = getStrLength(chars);
-	curP = new char[ len + 1 ];
-	if( curP == nullptr ) {
+	headP = new char[ len + 1 ];
+	if( headP == nullptr ) {
 		allocError();
 	}
 	else {
 		for( MyStrSizeT i=0; i<len; ++i ) {
-			curP[i] = chars[i];
+			headP[i] = chars[i];
 		}
-		curP[len] = eos;
+		headP[len] = eos;
 	}
 } // Done
 
 void MyString::operator=( const MyString& myStr ) {
-	delete[] curP;
+	delete[] headP;
 	MyStrSizeT len = myStr.size();
 	char* tempCharP = myStr.getString();
-	curP = new char[ len + 1 ];
-	if( curP == nullptr ) {
+	headP = new char[ len + 1 ];
+	if( headP == nullptr ) {
 		allocError();
 	}
 	else {
 		for( MyStrSizeT i=0; i<len; ++i ) {
-			curP[i] = tempCharP[i];
+			headP[i] = tempCharP[i];
 		}
-		curP[len] = eos;
+		headP[len] = eos;
 	}
 	delete[] tempCharP;
 } // Done
@@ -181,14 +186,14 @@ void MyString::operator=( const MyString& myStr ) {
 
 MyString MyString::operator+( const char ch ) {
 	const char str[2] = { ch, eos };
-	char* tempCharP = concatenate( curP, str );
+	char* tempCharP = concatenate( headP, str );
 	MyString myNewStr(tempCharP);
 	delete[] tempCharP;
 	return myNewStr;
 } // Done
 
 MyString MyString::operator+( const char* str ) {
-	char* tempCharP = concatenate( curP, str );
+	char* tempCharP = concatenate( headP, str );
 	MyString myNewStr(tempCharP);
 	delete[] tempCharP;
 	return myNewStr;
@@ -196,7 +201,7 @@ MyString MyString::operator+( const char* str ) {
 
 MyString MyString::operator+( const MyString& myStr ) {
 	char* str = myStr.getString();
-	char* tempCharP = concatenate( curP, str );
+	char* tempCharP = concatenate( headP, str );
 	MyString myNewStr(tempCharP);
 	delete[] tempCharP;
 	delete[] str;
@@ -207,29 +212,55 @@ MyString MyString::operator+( const MyString& myStr ) {
 
 void MyString::operator+=( const char ch ) {
 	const char str2[2] = { ch, eos };
-	char* tempStr = concatenate( curP, str2 );
-	delete[] curP;
-	curP = tempStr;
+	char* tempStr = concatenate( headP, str2 );
+	delete[] headP;
+	headP = tempStr;
 }
 
 void MyString::operator+=( const char* str ) {
-	char* tempStr = concatenate( curP, str );
-	delete[] curP;
-	curP = tempStr;
+	char* tempStr = concatenate( headP, str );
+	delete[] headP;
+	headP = tempStr;
 }
+
 void MyString::operator+=( const MyString& myStr ) {
 	char* str2 = myStr.getString();
-	char* tempStr = concatenate( curP, str2 );
-	delete[] curP;
+	char* tempStr = concatenate( headP, str2 );
+	delete[] headP;
 	delete[] str2;
-	curP = tempStr;
+	headP = tempStr;
 }
 
 //////////////////// operator [] ////////////////////
 
 inline char MyString::operator[] ( MyStrSizeT index ) const {
-	char ch = *(curP + index);
+	char ch = *( headP + index );
 	return ch;
+}
+
+//////////////////// counter ////////////////////
+
+inline MyString::MyStrSizeT MyString::count( const char ch ) const {
+	MyStrSizeT cnt = 0;
+	char* curP = headP;
+	while( *curP != eos ) {
+		if( ch == *curP ) cnt++;
+		curP++;
+	}
+	return cnt;
+}
+
+//////////////////// finder ////////////////////
+
+inline long int MyString::find( const char ch ) const {
+	char* curP = headP;
+	long int position = 0;
+	while( *curP != eos ) {
+		if( ch == *curP ) return position;
+		position++;
+		curP++;
+	}
+	return -1;
 }
 
 /***************** private methods *****************/
@@ -264,6 +295,12 @@ inline char* MyString::concatenate( const char* str1, const char* str2 ) const {
 	return charP;
 } // Done
 
+/////////////////////////////////////////////////////
+////////////////// other functions //////////////////
+/////////////////////////////////////////////////////
+
+///////////////// ostream operator /////////////////
+
 std::ostream &operator<<( std::ostream &os, MyString &myStr ){
 	char* tempCharP = myStr.getString();
 	os << tempCharP;
@@ -271,5 +308,18 @@ std::ostream &operator<<( std::ostream &os, MyString &myStr ){
 	return os;
 } // Done
 
+//////////////////// operator + ///////////////////
+
+MyString operator+( const char* str, const MyString& myStr ) {
+	MyString tempMyStr(str);
+	MyString myNewStr = ( tempMyStr + myStr );
+	return myNewStr;
+}
+
+MyString operator+( const char ch, const MyString& myStr ) {
+	MyString tempMyStr(ch);
+	MyString myNewStr = ( tempMyStr + myStr );
+	return myNewStr;
+}
 
 #endif

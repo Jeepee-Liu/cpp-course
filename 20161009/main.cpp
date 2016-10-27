@@ -1,5 +1,7 @@
 #include "main.h"
 
+#define DEBUG std::cout<<"breakpoint"<<std::endl;
+
 /***********************************************
  * Demostrate a 2D Monte Carlo walk simulation.
  * Functions are encapsulated in class MCWalk.
@@ -11,7 +13,7 @@
 int main(int argc, char* argv[]) {
 	MCWalk walk;
 	parseArgs(argc, argv, walk);
+	walk.showSetting();
 	walk.loop();
-	walk.end();
 	return 0;
 }

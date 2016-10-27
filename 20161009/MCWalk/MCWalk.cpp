@@ -1,9 +1,12 @@
 #ifdef MONTE_CARLO_WALK_H
 
-const double MCWalk::pi = 3.14159265358979323;
+#define DEBUG std::cout<<"breakpoint"<<std::endl;
+
+const double MCWalk::pi = 3.1415926;
 const bool MCWalk::right = true;
 
-MCWalk::MCWalk(MCWalk::SettingT setting) {
+MCWalk::MCWalk(MCWalk::SettingT setting) :
+rd(), gen(rd()), thetaDis( 0, 2*pi ) {
 	std::srand(std::time(0));
 	// New method
 	switch (setting.mode) {
@@ -30,8 +33,8 @@ void MCWalk::initPosition() {
 	}
 	else {
 		/* if (setting.initMode == 1) */
-		float theta = 2*pi* std::rand()/(float)RAND_MAX;
-		float rho = setting.bound * std::rand()/(float)RAND_MAX;
+		double theta = 2*pi* std::rand()/(double)RAND_MAX;
+		double rho = setting.bound * std::rand()/(double)RAND_MAX;
 		position[0] = rho * std::cos(theta);
 		position[1] = rho * std::sin(theta);
 	}
@@ -41,7 +44,6 @@ void MCWalk::loop() {
 	fo.open(setting.fileDir);
 	sprintf( buffer, "%6s\t%12s\t%12s\n", "i", "x", "dx" );
 	fo << buffer;
-	// std::cout << "I'm looping!" << std::endl;
 	double* distances = new double[setting.avgN];
 	for( int i=0; i != setting.stepN; ++i ) {
 		for( int j=0; j != setting.avgN; ++j ) {
@@ -54,29 +56,46 @@ void MCWalk::loop() {
 	delete[] distances;
 } // Done
 
-void MCWalk::end() {
+MCWalk::~MCWalk() {
 	fo.close();
-	// std::cout << "I'm ending!" << std::endl;
 } // Done
 
-void MCWalk::tryToMove() {
-	double direction = getDirection();
-	if( movable(direction) )
+void MCWalk::showSetting() const {
+	std::cout
+	<< "step length:     " << setting.stepLength << "\n"
+	<< "step number:     " << setting.stepN << "\n"
+	<< "average number : " << setting.avgN << "\n"
+	<< "k*T :            " << setting.kT << "\n"
+	<< "file name:       " << setting.fileDir << "\n"
+	<< "mode:            " << setting.mode << "\n"
+	<< "initialize mode: " << setting.initMode << "\n"
+	<< "bound:           " << setting.bound << std::endl;
+}
+
+//////////////////// private /////////////////////
+
+inline void MCWalk::tryToMove() {
+	double direction =  getDirection();
+	if( movable(direction) ) {
+		// DEBUG // cannot reach here
 		move(direction);
+	}
 } // Done
 
-double MCWalk::getDirection() {
+inline double MCWalk::getDirection() {
 	// return the angle to move
 	// from 0 to 2*pi
-	return 2 * pi * std::rand() / (double) RAND_MAX;
+	//return 2*pi* std::rand()/(double)RAND_MAX;
+	return thetaDis(gen);
 } // Done
 
-bool MCWalk::movable(double direction){
-	double nextPosition[2];
+inline bool MCWalk::movable(double direction){
+	double* nextPosition = new double[2];
 	nextPosition[0] = position[0] + setting.stepLength * std::cos(direction);
 	nextPosition[1] = position[1] + setting.stepLength * std::sin(direction);
 	double nextDistance = getDistance(nextPosition);
 	double dE = setting.potential(nextPosition) - setting.potential(position);
+	delete[] nextPosition;
 	if( nextDistance < setting.bound ) {
 		// Within boundary
 		if( dE > 0 ) {
@@ -96,19 +115,19 @@ bool MCWalk::movable(double direction){
 	}
 } // Done
 
-void MCWalk::move(double direction) {
+inline void MCWalk::move(double direction) {
 	position[0] += setting.stepLength * std::cos(direction);
 	position[1] += setting.stepLength * std::sin(direction);
 } // Done
 
-void MCWalk::record(int i, double* distances) {
+inline void MCWalk::record(int i, double* distances) {
 	double avg = mean(distances, setting.avgN);
 	double std = standardDeviation(distances, setting.avgN);
 	sprintf( buffer, "%6i\t%12.8f\t%12.8f\n", i+1, avg, std );
 	fo << buffer;
 }  // Done
 
-double MCWalk::mean(double* xs, int n) const {
+inline double MCWalk::mean(double* xs, int n) const {
 	double sum = 0.0;
 	for(int i=0; i != n; ++i) {
 		sum += xs[i];
@@ -116,7 +135,7 @@ double MCWalk::mean(double* xs, int n) const {
 	return (sum/n);
 } // Done
 
-double MCWalk::standardDeviation(double* xs, int n) const {
+inline double MCWalk::standardDeviation(double* xs, int n) const {
 	double meanVal = mean(xs,n);
 	double sqSum = 0.0;
 	for(int i=0; i != n; ++i) {
@@ -140,7 +159,7 @@ void usage(char* argv0) {
 	exit(1);
 } // Done
 
-void parseArgs(int argc, char* argv[], MCWalk& walk) {
+void parseArgs(int argc, char* argv[], MCWalk &walk) {
 	char ch;
 	while(( ch = getopt(argc,argv,"n:l:o:a:k:f:i:h") ) != -1 ){
 		// go through all the valid parameters

@@ -88,15 +88,31 @@ public:
 	 */
 	inline char operator[] ( MyStrSizeT index ) const;
 
+	/**
+	 * char counter
+	 * [ argument ] char ch
+	 * [  return  ] the number of ch in this object
+	 */
+	inline MyStrSizeT count( const char ch) const;
+
+	/**
+	 * find a char in my string
+	 * return the position of the string
+	 */
+	inline long int find( const char ch ) const;
+	
 private:
 
 	const char eos = '\0';
-	char* curP;
+	char* headP;
 	inline void allocError() const;
 	inline MyStrSizeT getStrLength(const char* chars) const;
 	inline char* concatenate( const char* str1, const char* str2 ) const ;
 
 };
+
+MyString operator+( const char* str, const MyString& myStr );
+MyString operator+( const char ch, const MyString& myStr );
 
 std::ostream& operator<<( std::ostream& os, MyString& myStr );
 

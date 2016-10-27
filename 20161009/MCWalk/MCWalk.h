@@ -11,9 +11,6 @@
 #include <string>
 #include <unistd.h> // for optarg(）
 
-
-
-
 class MCWalk {
 
 friend void parseArgs(int argc, char* argv[], MCWalk& walk);
@@ -74,62 +71,89 @@ public:
 		/**
 		 * functional pointer "potential"
 		 */
-		double (*potential)(double*) = NULL;
+		double (* potential)(double* position) = potential1;
 	};
 
 	/**
 	 * constructor
 	 * both default and specified
 	 */ 
-	MCWalk(SettingT setting);
-
 	MCWalk() = default;
+	MCWalk(SettingT setting);
 
 	/****
 	 * start the simulation with this method
 	 */ 
 	void loop();
+
 	/****
+	 * distructor
 	 * after simulation, end it by this method.
 	 */ 
-	void end();
+	~MCWalk();
+
+	void showSetting() const;
 
 private:
+	/**
+	 * settings are stored here
+	 */
 	SettingT setting;
-	// A new method for random gen
-	std::random_device rd();
-	std::mt19937_64 gen();
-	// These constants are used to defined static methods
-	// of this class, so they have to be of qualifier "const".
+
+	/**
+	 * A new method for random gen
+	 * @return [description]
+	 */
+	std::random_device rd;
+	std::mt19937 gen;
+	std::uniform_real_distribution<> thetaDis;
+
+	/**
+	 * These constants are used to defined static methods
+	 * of this class, so they have to be of qualifier "const".
+	 */
 	static const double pi;
 	static const bool right;
+
 	char buffer[100];
 	double position[2];
+
 	std::ofstream fo;
-	static double getDistance(double* pos) {
+
+	inline static double getDistance(double* pos) {
 		// return the distance to original point
-		return std::sqrt(pos[0]*pos[0] + pos[1]*pos[1]);
+		double d = std::sqrt(pos[0]*pos[0] + pos[1]*pos[1]);
+		// std::cout << ">>> Break Point [getDistance() return]\n";
+		return d;
 	}
+
 	static double potential1(double* position) {
 		double r = getDistance(position);
 		double potential = -0.5*std::cos(0.5*pi*r) - std::cos(1.5*pi*r);
 		return potential;
 	} // Done
+
 	static double potential2(double* position) {
 		// Unused
 		double r = getDistance(position);
 		return r*2;
 	} // To be done
+
 	void initPosition();
-	void tryToMove();
-	double getDirection();
-	bool movable(double direction);
-	void move(double direction);
-	void record(int i, double* positions);
+
+	inline void tryToMove();
+
+	inline double getDirection();
+
+	inline bool movable(double direction);
+	
+	inline void move(double direction);
+	
+	inline void record(int i, double* positions);
 	// The 2 methods below is to get the statistic
 	// parameters of the averaged avgN data.
-	double mean(double* xs, int n) const;
-	double standardDeviation(double* xs, int n) const;
+	inline double mean(double* xs, int n) const;
+	inline double standardDeviation(double* xs, int n) const;
 };
 
 #include <MCWalk.cpp>
