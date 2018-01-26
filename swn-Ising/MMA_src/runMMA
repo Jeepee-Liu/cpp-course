@@ -1,0 +1,16 @@
+#!/bin/bash
+
+wd="/Users/jeepee/Documents/Cpp_trade/cpp-course/swn-Ising"
+math="/Applications/Mathematica.app/Contents/MacOS/MathKernel"
+src="${wd}/MMA_src/plotGraph.mma"
+
+main() {
+	${math} -run "<<${src}"
+	#### Added "Quit[]" to the end of Mathematica.
+	#### No more need to externally kill the process.
+	# ps | grep Mathematica | grep -v grep | awk '{print $1}' | xargs kill -1
+}
+
+main
+
+exit

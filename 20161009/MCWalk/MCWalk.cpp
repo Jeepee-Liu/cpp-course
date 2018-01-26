@@ -159,7 +159,7 @@ void usage(char* argv0) {
 	exit(1);
 } // Done
 
-void parseArgs(int argc, char* argv[], MCWalk &walk) {
+SmallWorldNetwork::SmallWorldNetwork(int argc, const char* argv[]) {
 	char ch;
 	while(( ch = getopt(argc,argv,"n:l:o:a:k:f:i:h") ) != -1 ){
 		// go through all the valid parameters

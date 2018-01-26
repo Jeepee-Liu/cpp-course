@@ -5,21 +5,19 @@
 #include <iomanip>
 #include <vector>
 #include <random>
-#include <algorithm> // std::for_each()
+#include <algorithm> // std::for_each(...)
+#include <utility> // std::move(...)
+#include <cmath>
 
 class MyVector {
 
 	/**************** FRIENDS ****************/
 	
-	/**
-	 * left scalar product
-	 */
-	friend MyVector operator* ( const double, const MyVector& );
-	
-	/**
-	 * outstream operator <<
-	 */
-	friend std::ostream& operator<< ( std::ostream&, const MyVector& );
+	friend MyVector& operator* ( const double dbl, const MyVector& myVec );
+	friend std::ostream& operator<< ( std::ostream& os, const MyVector& myVec );
+	friend inline MyVector cross( const MyVector& myVec1, const MyVector& myVec2 );
+	// friend inline MyVector cross( const MyVector& myVec1, const MyVector& myVec2 );
+	friend inline double angle( const MyVector& myVec1, const MyVector& myVec2 );
 
 public:
 	
@@ -35,13 +33,17 @@ public:
 	 */
 	inline static void setDim( int d );
 	inline static int getDim();
-	inline MyVector& initialize( double* dblPtr );
+	inline MyVector& initialize( double* const dblPtr );
 	inline MyVector& randomInitialize();
 
-	/**************** CALCULATE ****************/
+	/**************** CALCULATIONS ****************/
 
 	inline MyVector& normalize();
 	inline double module() const;
+
+	inline MyVector& setMagnitute( const double mag );
+	inline MyVector cross( const MyVector& myVec ) const;
+	inline double angle( const MyVector& myVec ) const;
 
 	/**************** OPERATORS ****************/
 
@@ -54,16 +56,16 @@ public:
 	/**
 	 * assignment operator =
 	 */
-	inline void operator= ( double* dblPtr );
+	inline void operator= ( double* const dblPtr );
 	inline void operator= ( const MyVector& myVec );
 	
 	/**
 	 * operator + - * / ( with scalar )
 	 */
-	inline MyVector operator+ ( double scalar ) const;
-	inline MyVector operator- ( double scalar ) const;
-	inline MyVector operator* ( double scalar ) const;
-	inline MyVector operator/ ( double scalar ) const;
+	inline MyVector operator+ ( const double scalar ) const;
+	inline MyVector operator- ( const double scalar ) const;
+	inline MyVector operator* ( const double scalar ) const;
+	inline MyVector operator/ ( const double scalar ) const;
 
 	/**
 	 * operator + - * ( with vector )
@@ -90,20 +92,40 @@ public:
 
 	inline MyVector& disp( std::ostream& os );
 	inline MyVector& show();
+	inline MyVector& pretty(); // as MATLAB
 
 private:
 	std::vector<double> _data;
 	static int _dim;
 	static bool _dimIsSet;
+	static const double pi;
 	inline double norm( int k ) const;
 	static const char* sep;
 	static const int precision;
 	static const int width;
-
 };
 
-MyVector operator* ( const double d, const MyVector& myVec );
+/**
+ * left scalar product
+ */
+MyVector& operator* ( const double dbl, const MyVector& myVec );
+
+/**
+ * outstream operator <<
+ */
 std::ostream& operator<< ( std::ostream& os, const MyVector& myVec );
+
+/**
+ * cross product of two vectors
+ * return a new vector.
+ */
+inline MyVector cross( const MyVector& myVec1, const MyVector& myVec2 );
+// inline MyVector cross( const MyVector& myVec1, const MyVector& myVec2 );
+
+/**
+ * calculate the angle between two vectors.
+ */
+inline double angle( const MyVector& myVec1, const MyVector& myVec2 );
 
 #include "MyVector.cpp"
 #endif

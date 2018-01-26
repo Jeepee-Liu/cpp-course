@@ -1,0 +1,4 @@
+基本数学：STL
+线性代数：Eigen, Armadillo
+傅立叶变换：EigenFFT, Armadillo
+图论：GSL, Boost

@@ -1,0 +1,4 @@
+NOTE THE INPUT & OUTPUT FILE:
+
+The file to read is ./data/1COA.pdb
+And the file to write is ./data/residues/pdb

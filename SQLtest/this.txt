@@ -1,6 +1,0 @@
-python
-bin/bash
-aa
-bb
-cc
-dd

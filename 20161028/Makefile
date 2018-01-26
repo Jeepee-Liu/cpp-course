@@ -1,4 +1,4 @@
-CXX = g++ --std=c++14
+CXX = g++ --std=c++11
 CFLAG = -Wall -Wextra
 MAIN_SRC = main.cpp
 MAIN_TARGET = main

@@ -1,0 +1,36 @@
+#!/Applications/Mathematica.app/Contents/MacOS/MathKernel
+
+export = True;
+
+(* Set the function describing the position of vertices *)
+
+ellipseLayout[n_, {a_, b_}] := 
+ Table[{a Cos[2 Pi/n u], b Sin[2 Pi/n u]}, {u, 1, n}]
+
+(* Import graph data from target directory *)
+graph = Import[
+   "/Users/jeepee/Documents/Cpp_trade/cpp-course/swn-Ising/swn/\
+connections.mma.list"];
+
+(* Parse the imported data *)
+len = ToExpression@graph[[1]][[1]];
+connectionTable = ToExpression@graph[[2]][[1]];
+workingDirectory = ToString@graph[[3]][[1]];
+vStyleRules = None;
+If[Length@graph >= 4,
+  vStyleRules = ToExpression@graph[[4]][[1]], None];
+
+(* Plot graphs *)
+g1 = Graph[connectionTable,
+  VertexCoordinates -> ellipseLayout[len, {1, 1}],
+  ImageSize -> Large, VertexStyle -> vStyleRules]
+g2 = Graph[connectionTable,
+  ImageSize -> Large, VertexStyle -> vStyleRules]
+
+(* Export graphs if permitted *)
+If[export == True,
+ (Export[workingDirectory <> "/fig/circleGraph.png", g1];
+  Export[workingDirectory <> "/fig/automaticGraph.png", g2];),
+ None]
+
+Quit[]

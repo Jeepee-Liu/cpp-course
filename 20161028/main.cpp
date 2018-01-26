@@ -2,10 +2,11 @@
 #include <iostream>
 #include <string>
 
-#define LINE std::cout<<std::string(60,'-')<<std::endl;
-#define NL std::cout<<std::endl;
-#define TITLE_START NL LINE std::cout<<
-#define TITLE_END <<std::endl; LINE NL
+#define LINE std::cout << std::string( 60, '-' ) << std::endl;
+#define NL std::cout << std::endl;
+#define TITLE_START NL LINE std::cout <<
+#define TITLE_END << std::endl; LINE NL
+
 
 int main() {
 	/**
@@ -13,6 +14,7 @@ int main() {
 	 *     "./MyVector/MyVector.h"
 	 * as below
 	 */
+	/****************** test start! ******************/
 	TITLE_START " ***** HELLO! Ready to test MyVector ***** " TITLE_END
 
 	/********** testing dim. setter & getter **********/
@@ -31,7 +33,7 @@ int main() {
 	TITLE_START " ******* testing constructor  ******* " TITLE_END
 
 	std::cout << "Constructing vectors..." << std::endl;
-	MyVector v1, v2, v3;
+	MyVector v1, v2, v3, v4, v5;
 
 	/********** test initializing methods **********/
 	/**********       and disp / show     **********/
@@ -123,6 +125,39 @@ int main() {
 	v3 = v1+v2;
 	std::cout << "vector 3 (vector 1 + vector 2) = ( "
 	<< v3 << " )" << std::endl;
+
+	/***********      test cross() *************/
+
+	TITLE_START " ********* testing cross product ********** " TITLE_END
+
+	double dblPtr3[3] = {1.0, 2.0, 3.0};
+	double dblPtr4[3] = {2.0, 3.0, 4.0};
+	v4 = dblPtr3;
+	v5 = dblPtr4;
+	v3 = cross( v4, v5 );
+	std::cout << "[ cross(v1, v2) ]\n"
+	<< "\t(1, 2, 3) x (2, 3, 4) = "; 
+	v3.pretty();
+
+	v3 = v5.cross( v4 );
+	std::cout << "[ v1.cross(v2) ]\n"
+	<< "\t(2, 3, 4) x (1, 2, 3) = "; 
+	v3.pretty();
+
+	TITLE_START " ********* testing angle calculation ********** " TITLE_END
+
+	double ang = 0;
+	ang = angle( v4, v5 );
+	std::cout << "[ angle(v1, v2) ]\n"
+	<< "\t< (1, 2, 3) , (2, 3, 4) > = "
+	<< ang << std::endl;
+
+	ang = v5.angle( v4 );
+	std::cout << "[ v1.angle(v2) ]\n"
+	<< "\t< (2, 3, 4) , (1, 2, 3) > = "
+	<< ang << std::endl;
+
+	TITLE_START " ***************    END OF PROGRAM    *************** " TITLE_END
 
 	return 0;
 }
